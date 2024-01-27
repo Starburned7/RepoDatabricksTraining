@@ -235,6 +235,10 @@ SELECT COUNT(*) FROM sales_csv
 
 -- COMMAND ----------
 
+SELECT DISTINCT COUNT(order_id) from sales_csv
+
+-- COMMAND ----------
+
 -- DBTITLE 0,--i18n-ee1ac9ff-add1-4247-bc44-2e71f0447390
 -- MAGIC %md
 -- MAGIC
