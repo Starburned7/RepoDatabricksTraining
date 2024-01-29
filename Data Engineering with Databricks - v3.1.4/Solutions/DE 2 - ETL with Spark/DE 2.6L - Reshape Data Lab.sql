@@ -123,11 +123,12 @@ SELECT * FROM (
 -- MAGIC %python
 -- MAGIC # ANSWER
 -- MAGIC (spark.read.table("events")
--- MAGIC     .groupBy("user_id")
+-- MAGIC     .withColumnRenamed("user_id", "user")
+-- MAGIC     .groupBy("user")
 -- MAGIC     .pivot("event_name")
 -- MAGIC     .count()
--- MAGIC     .withColumnRenamed("user_id", "user")
 -- MAGIC     .createOrReplaceTempView("events_pivot"))
+-- MAGIC
 
 -- COMMAND ----------
 

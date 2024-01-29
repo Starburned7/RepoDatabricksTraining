@@ -78,6 +78,21 @@
 
 -- COMMAND ----------
 
+CREATE TABLE IF NOT EXISTS events_json
+  (key BINARY, offset LONG, partition INTEGER, timestamp LONG, topic STRING, value BINARY)
+USING JSON
+-- OPTIONS (
+--   header = "true",
+--   delimiter = "|"
+-- )
+LOCATION "${DA.paths.kafka_events}"
+
+-- COMMAND ----------
+
+select * from events_json
+
+-- COMMAND ----------
+
 -- DBTITLE 0,--i18n-33231985-3ff1-4f44-8098-b7b862117689
 -- MAGIC %md
 -- MAGIC

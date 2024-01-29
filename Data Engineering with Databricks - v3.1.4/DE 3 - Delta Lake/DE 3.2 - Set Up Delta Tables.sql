@@ -174,6 +174,10 @@ CREATE OR REPLACE TABLE purchase_dates (
 
 -- COMMAND ----------
 
+select * from purchase_dates
+
+-- COMMAND ----------
+
 -- DBTITLE 0,--i18n-33e94ae0-f443-4cc9-9691-30b8b08179aa
 -- MAGIC %md
 -- MAGIC
@@ -192,6 +196,10 @@ USING purchases b
 ON a.id = b.id
 WHEN NOT MATCHED THEN
   INSERT *
+
+-- COMMAND ----------
+
+select * from purchase_dates
 
 -- COMMAND ----------
 
